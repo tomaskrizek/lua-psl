@@ -1,0 +1,30 @@
+Source: lua-psl
+Section: interpreters
+Priority: optional
+Maintainer: Tomas Krizek <tomas.krizek@nic.cz>
+Build-Depends: debhelper (>= 9),
+               dh-lua,
+               libpsl-dev,
+Standards-Version: 3.9.8
+Homepage: https://github.com/daurnimator/lua-psl
+Vcs-Git: https://github.com/tomaskrizek/lua-psl.git
+Vcs-Browser: https://github.com/tomaskrizek/lua-psl.git
+
+Package: lua-psl
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: Bindings to libpsl, a C library that handles the Public Suffix List
+
+Package: lua-psl-dev
+Architecture: any
+Multi-Arch: same
+Depends: lua-psl (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: Bindings to libpsl, a C library that handles the Public Suffix List
